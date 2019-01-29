@@ -2,7 +2,6 @@ import java.util.Queue;
 import java.util.Stack;
 class Solution20 {
     public boolean isValid(String s) {
-        String k="";
         Stack<Character> ks=new Stack<Character>();
         for(int i=0;i<s.length();++i){
             switch(s.charAt(i)){

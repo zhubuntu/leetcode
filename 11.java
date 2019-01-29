@@ -1,4 +1,3 @@
-import com.sun.jndi.url.iiopname.iiopnameURLContextFactory;
 
 class Solution11 {
     public int maxArea(int[] height) {
