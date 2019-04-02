@@ -1,5 +1,5 @@
 
-class Solution10 {
+public class Solution10 {
     public boolean isMatch(String s, String p) {
         int i=0,j=0;
         for(;i<p.length();){
@@ -50,7 +50,7 @@ class Solution10 {
     }
     public static void main(String[] args){
         Solution10 s = new Solution10();
-        boolean result= s.isMatch("sdfsdf","sd.sk*df");
+        boolean result= s.isMatch("sdfssdf","sd.sk*df");
         System.out.print(result);
     }
 }
