@@ -1,5 +1,5 @@
 
-public class Solution23 {
+class Solution23 {
     protected ListNode combine2list(ListNode l1,ListNode l2){
         ListNode re,back_re;;
         if(l2!=null && l2.val<l1.val){
