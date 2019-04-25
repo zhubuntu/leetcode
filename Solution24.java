@@ -1,5 +1,7 @@
 class Solution24 {
     public ListNode swapPairs(ListNode head) {
+        if(head == null)
+            return null;
         ListNode l1=head;
         if(head.next!=null){
             l1=head.next;

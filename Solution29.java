@@ -17,7 +17,6 @@ class Solution29 {
         int pre=0;
         int pre_div=0;
         while(div<dividend){
-            System.out.println(div);
             pre=result;
             pre_div=div;
             result += pre;

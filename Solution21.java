@@ -3,14 +3,8 @@ class Solution21 {
         ListNode l=new ListNode(0);
         ListNode first=l;
         while(l1 !=null || l2 !=null){
-            if(l1 ==null){
-                l.next=l2;
-                l1=null;
-            }
-            else if(l2 ==null){
-                l.next=l1;
-                l2=null;
-            }
+            if(l1 == null) {l.next=l2; break;}
+            else if(l2 ==null){l.next=l1; break;}
             else{
                 if(l1.val <l2.val){
                     l.next=l1;

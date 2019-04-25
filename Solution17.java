@@ -14,7 +14,7 @@ class Solution17 {
         map_re.put('6', "mno");
         map_re.put('7', "pqrs");
         map_re.put('8', "tuv");
-        map_re.put('8', "wxyz");
+        map_re.put('9', "wxyz");
         List<String> result=new ArrayList<String>();
         result.add("");
         for(int i=0;i<digits.length();++i){
@@ -28,14 +28,15 @@ class Solution17 {
                 }
                 result.set(j, this_re+=chars.charAt(0));
             }
-            
         }
+        if(result.size()==1)
+            return new ArrayList<String>();
         return result;
 
     }
     public static void main(String[] args){
         Solution17 s = new Solution17();
-        List<String> result= s.letterCombinations("34567");
+        List<String> result= s.letterCombinations("");
         //应该是可以用迭代器来做，速度会更快一些的
         System.out.print(result);
     }

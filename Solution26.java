@@ -1,5 +1,7 @@
 class Solution26 {
     public int removeDuplicates(int[] nums) {
+        if(nums.length<2)
+            return nums.length;
         int end=1;
         int pre=nums[0];
         for(int i=1;i<nums.length;++i){

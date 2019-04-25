@@ -17,35 +17,12 @@ class Solution25 {
     public void reverseList(ListNode head, ListNode end){
         ListNode back_head=head;
         ListNode pre=null;
-        while(pre=end){
+        while(pre!=end){
             ListNode hn=head.next;
             head.next=pre;
             pre=hn;
             head=hn.next;
         }
-    }
-    public ListNode swapPairs(ListNode head) {
-        ListNode l1=head;
-        if(head.next!=null){
-            l1=head.next;
-            head.next=l1.next;
-            l1.next=head;
-        }
-
-        ListNode pre=l1.next;
-        ListNode next;
-        head = head.next;
-        while(head !=null){
-            if(head.next !=null){
-               ListNode hn=head.next;
-               pre.next=hn;
-               head.next=hn.next;
-               pre=head;
-               hn.next=head; 
-            }
-            head=head.next;
-        }
-        return l1;
     }
     public static void main(String[] args){
         Solution25 s = new Solution25();

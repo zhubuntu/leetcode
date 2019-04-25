@@ -36,11 +36,18 @@ class Solution23 {
     public ListNode mergeKLists(ListNode[] lists) {
         if(lists.length ==0)
             return null;
-        ListNode re=lists[0];
-        for(int i=1;i<lists.length;++i){
-            re=this.combine2list(re, lists[i]);
-        }
-        return re;
+        if(lists.length ==1)
+            return lists[0];
+        if(lists.length == 2)
+            return this.combine2list(lists[0], lists[1]);
+        int mid = lists.length/2;
+        ListNode[] l1 = new ListNode[mid];
+        for(int i=0;i<mid;++i)
+            l1[i] = lists[i];
+        ListNode[] l2 = new ListNode[lists.length-mid];
+        for(int i=mid; i<lists.length; ++i)
+            l2[i-mid] = lists[i];
+        return combine2list(mergeKLists(l1),mergeKLists(l2));
     }
     public static void main(String[] args){
         Solution23 s = new Solution23();
