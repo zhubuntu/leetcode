@@ -1,31 +1,30 @@
+import java.util.Arrays;
+
 class Solution31 {
-    public void revertNum(int[] nums, int begin){
-        int mid_len=(begin+nums.length)/2;
-        for(int i=begin;i<mid_len;++i){
-            int end = nums.length-(i-begin)-1;
-            int mid=nums[end];
-            nums[end]=nums[i];
-            nums[i]=mid;
-        }
-    }
     public void nextPermutation(int[] nums) {
         for(int i=nums.length-1;i>0;--i){
             if(nums[i]>nums[i-1]){
-                int mid=nums[nums.length-1];
-                for(int j=nums.length-2;j>=i-1;--j){
-                    nums[j+1]=nums[j];
+                int begin = i-1;
+                int end = i;
+                for(int j=i; j<nums.length;++j){
+                    if(nums[j]>nums[i-1]) end = j;
+                    else break;
                 }
-                nums[i-1]=mid;
+                int begin_value = nums[begin];
+                nums[begin] = nums[end];
+                nums[end] = begin_value;
+                Arrays.sort(nums, begin+1, nums.length);
                 return;
             }
         }
-        revertNum(nums, 0);
+        Arrays.sort(nums, 0, nums.length);
     }
     public static void main(String[] args){
         Solution31 s = new Solution31();
-        int[] nums={1,4,2,5,3};
+        int[] nums={2,3,1};
         s.nextPermutation(nums);
         for(int i=0;i<nums.length;++i)
-        System.out.println(nums[i]);
+            System.out.println(nums[i]);
+
     }
 }
